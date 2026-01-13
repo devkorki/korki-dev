@@ -1,11 +1,22 @@
 export const projects = [
   {
     slug: "uno-no-mercy",
-    title: "UNO NoNo Mercy",
+    title: "UNO No Mercy",
     desc: "Brutal UNO ruleset with elimination & chaos.",
-    status: "wip",
+    status: "live",
     category: "Games",
     tags: ["multiplayer", "socket.io"],
+    url: "https://unono.korki.dev" 
+  },
+
+    {
+    slug: "knucklebones",
+    title: "Knucklebones",
+    desc: "Dice game by Cult of the Lamb",
+    status: "live",
+    category: "Games",
+    tags: ["multiplayer", "socket.io"],
+    url: "https://knuckles.korki.dev" 
   },
   {
     slug: "xmlforge",
@@ -13,7 +24,8 @@ export const projects = [
     desc: "Excel → XML invoice conversion tool with validation.",
     status: "prototype",
     category: "Tools",
-    tags: ["python", "invoices"],
+    tags: ["python"],
+    url: "https://github.com/yourname/xmlforge"
   },
   {
     slug: "coming-soon",
@@ -21,6 +33,7 @@ export const projects = [
     desc: "More experiments incoming.",
     status: "wip",
     category: "Etc",
-    tags: ["lab"],
+    tags: ["lab"]
+    // no url → goes to /p/coming-soon
   },
 ];

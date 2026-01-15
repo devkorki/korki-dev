@@ -7,44 +7,42 @@ function StatusPill({ status }) {
     status === "wip" ? "WIP" :
     "PROTOTYPE";
 
-  return <span className="pill">{label}</span>;
+  return <span className={`pill ${status}`}>{label}</span>;
 }
 
 export default function ProjectCard({ p }) {
-  const isExternal = Boolean(p.url);
-  const href = isExternal ? p.url : `/p/${p.slug}`;
+  return (
+    <Link to={`/p/${p.slug}`} className="cardLink">
+      <div className="card">
+        <div className="cardMain">
+          <div className="cardTitleRow">
+            <h3 className="cardTitle">{p.title}</h3>
+            <StatusPill status={p.status} />
+          </div>
 
-  const Card = (
-    <div className="card">
-      <div>
-        <div className="cardTitleRow">
-          <h3 className="cardTitle">{p.title}</h3>
-          <StatusPill status={p.status} />
+          <p className="cardDesc">{p.desc}</p>
+
+          <div className="tagRow">
+            {p.tags.slice(0, 4).map((t) => (
+              <span key={t} className="tag">{t}</span>
+            ))}
+          </div>
         </div>
-        <p className="cardDesc">{p.desc}</p>
-      </div>
 
-      <div className="tagRow">
-        {p.tags.slice(0, 4).map((t) => (
-          <span key={t} className="tag">{t}</span>
-        ))}
+        {/* ▶ PLAY BUTTON */}
+        {p.playUrl && (
+          <button
+            className="playBtn"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              window.open(p.playUrl, "_blank");
+            }}
+          >
+            ▶ Play
+          </button>
+        )}
       </div>
-    </div>
-  );
-
-  // 🔀 Redirect logic
-  return isExternal ? (
-    <a
-      className="cardLink"
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-    >
-      {Card}
-    </a>
-  ) : (
-    <Link className="cardLink" to={href}>
-      {Card}
     </Link>
   );
 }

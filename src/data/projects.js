@@ -6,7 +6,7 @@ export const projects = [
     status: "live",
     category: "Games",
     tags: ["multiplayer", "socket.io"],
-    url: "https://unono.korki.dev" 
+    playUrl: "https://unono.korki.dev" 
   },
 
     {
@@ -16,7 +16,7 @@ export const projects = [
     status: "live",
     category: "Games",
     tags: ["multiplayer", "socket.io"],
-    url: "https://knuckles.korki.dev" 
+    playUrl: "https://knuckles.korki.dev" 
   },
   {
     slug: "xmlforge",

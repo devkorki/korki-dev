@@ -4,7 +4,7 @@ import { projects } from "../data/projects.js";
 /**
  * Order in which categories appear
  */
-const CATEGORY_ORDER = ["Games", "Tools", "Etc"];
+const CATEGORY_ORDER = ["Games", "Tools", "Random"];
 
 function groupByCategory(list) {
   const map = new Map();

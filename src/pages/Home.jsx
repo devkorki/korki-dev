@@ -1,5 +1,7 @@
 import ProjectCard from "../components/ProjectCard.jsx";
 import { projects } from "../data/projects.js";
+import { useConfig } from "../state/config.jsx";
+import { projects as baseProjects } from "../data/projects.js";
 
 /**
  * Order in which categories appear
@@ -17,13 +19,32 @@ function groupByCategory(list) {
 }
 
 export default function Home() {
+
+  
+  const { overrides } = useConfig();
+
+  const projects = baseProjects.map((p) => {
+    const o = overrides?.[p.slug];
+    if (!o) return p;
+    return {
+      ...p,
+      ...o,
+      tags: o.tags ?? p.tags,
+      status: o.status ?? p.status,
+      playUrl: o.playUrl ?? p.playUrl,
+    };
+  });
   const grouped = groupByCategory(projects);
+
 
   // Respect CATEGORY_ORDER but also allow future categories
   const categories = [
     ...CATEGORY_ORDER.filter((c) => grouped.has(c)),
     ...[...grouped.keys()].filter((c) => !CATEGORY_ORDER.includes(c)),
   ];
+
+
+  
 
   return (
     <main className="wrap">
@@ -49,7 +70,7 @@ export default function Home() {
           >
             GitHub
           </a>
-      
+
         </div>
       </header>
 
@@ -77,4 +98,7 @@ export default function Home() {
       </footer>
     </main>
   );
+
+
+  
 }

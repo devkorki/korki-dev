@@ -21,7 +21,7 @@ Built with **React + Vite**.
 - **React**
 - **Vite**
 - **ESLint**
-- Optional API routes via `/api` (useful for serverless endpoints / future features) 
+
 
 ---
 

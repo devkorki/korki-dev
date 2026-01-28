@@ -2,11 +2,11 @@
 
 Personal hub / portfolio site for **korki.dev** — a single place to showcase and link out to my projects (games, tools, experiments), with a clean UI and fast performance.
 
-Built with **React + Vite**. :contentReference[oaicite:1]{index=1}
+Built with **React + Vite**. 
 
 ---
 
-## What this is
+## What it is
 
 - A lightweight homepage that acts like a “project launcher/hub”
 - Project cards (and/or sections like *Games*, *Tools*, *Experiments*) that route users to:
@@ -21,7 +21,7 @@ Built with **React + Vite**. :contentReference[oaicite:1]{index=1}
 - **React**
 - **Vite**
 - **ESLint**
-- Optional API routes via `/api` (useful for serverless endpoints / future features) :contentReference[oaicite:2]{index=2}
+- Optional API routes via `/api` (useful for serverless endpoints / future features) 
 
 ---
 

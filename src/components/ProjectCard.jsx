@@ -4,8 +4,8 @@ function StatusPill({ status }) {
   if (!status) return null;
   const label =
     status === "live" ? "LIVE" :
-    status === "wip" ? "WIP" :
-    "PROTOTYPE";
+      status === "wip" ? "WIP" :
+        "PROTOTYPE";
 
   return <span className={`pill ${status}`}>{label}</span>;
 }
@@ -36,7 +36,11 @@ export default function ProjectCard({ p }) {
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
-              window.open(p.playUrl, "_blank");
+              if (p.playUrl.startsWith("/")) {
+                window.location.href = p.playUrl;
+              } else {
+                window.open(p.playUrl, "_blank");
+              }
             }}
           >
             ▶ Play

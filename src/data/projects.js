@@ -129,4 +129,37 @@ export const projects = [
     tags: ["draw", "socket.io"]
     
   },
+
+
+
+  {
+  slug: "kork-reader",
+  title: "Kork Reader",
+  desc: "Private browser-based EPUB reader. Your books stay on your device.",
+  about: `
+    Kork Reader is a lightweight EPUB reader built directly into Korki.dev.
+
+    Books are opened and stored locally in your browser using IndexedDB.
+    Nothing is uploaded to Korki.dev, so your library stays private and
+    does not use server storage.
+
+    It supports desktop and mobile reading, saved progress, bookmarks,
+    themes, typography controls and chapter navigation.
+  `,
+  features: [
+    "Open EPUB books directly from your device",
+    "Books never upload to the server",
+    "Local browser library with IndexedDB",
+    "Automatically saves reading progress",
+    "Bookmarks and table of contents",
+    "Light, sepia and dark reading themes",
+    "Font size, spacing and margin controls",
+    "Desktop and mobile support",
+    "Swipe and tap navigation on mobile"
+  ],
+  status: "live",
+  category: "Tools",
+  tags: ["epub", "reader", "privacy", "local"],
+  playUrl: "/reader"
+},
 ];

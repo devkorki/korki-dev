@@ -5,6 +5,7 @@ import Project from "./pages/Project.jsx";
 import { ConfigProvider } from "./state/config.jsx";
 import Terminal from "./components/Terminal.jsx";
 import ImageModal from "./components/ImageModal.jsx";
+import KorkReader from "./features/kork-reader";
 
 
 
@@ -62,6 +63,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/p/:slug" element={<Project />} />
+        <Route path="/reader" element={<KorkReader />} />
+
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </ConfigProvider>
